@@ -1,0 +1,20 @@
+{
+  "name": "my-note-app",
+  "version": "1.0.0",
+  "description": "A Note Taking application using Express.js, Sequelize, MySQL, and Redis.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "express-rate-limit": "^7.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.0",
+    "redis": "^3.0.2",
+    "sequelize": "^6.6.5"
+  }
+}

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: myrootpassword
+      MYSQL_DATABASE: mynotesdb
+    ports:
+      - "3306:3306"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      DB_HOST: mysql
+      DB_NAME: mynotesdb
+      DB_USER: root
+      DB_PASSWORD: myrootpassword
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
